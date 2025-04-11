@@ -126,71 +126,96 @@
     </style>
 </head>
 <body>
-    <label>Tipo de Espacio:</label><br>
-    <label>
-        <input type="checkbox" name="tipo-espacio" value="aula 3" onchange="updateSelection()">Aula 3
-    </label><br>
-    <label>
-        <input type="checkbox" name="tipo-espacio" value="aula 4" onchange="updateSelection()">Aula 4
-    </label><br>
-    <label>
-        <input type="checkbox" name="tipo-espacio" value="aula 5" onchange="updateSelection()">Aula 5
-    </label><br>
-    <div>
-    <label>
-        <input type="checkbox" name="tipo-espacio" value="auditorio grande" onchange="updateSelection()">Auditorio (Grande)
-    </label><br>
-    <label>
-        <input type="checkbox" name="tipo-espacio" value="auditorio chico" onchange="updateSelection()">Auditorio (Chico)
-    </label><br>
-    <label>
-        <input type="checkbox" name="tipo-espacio" value="area verde" onchange="updateSelection()">Área Verde
-    </label><br>
-    <div>
-    <label>
-        <input type="checkbox" name="tipo-espacio" value="velaria" onchange="updateSelection()">Velaria
-    </label><br>
-    <label>
-        <input type="checkbox" name="tipo-espacio" value="zona de convivencia" onchange="updateSelection()">Zona de Convivencia
-    </label><br>
-    <label>
-        <input type="checkbox" name="tipo-espacio" value="sala juntas chica" onchange="updateSelection()">Sala de Juntas (Chica)
-    </label><br>
-    <div>
-    <label>
-        <input type="checkbox" name="tipo-espacio" value="sala juntas grande" onchange="updateSelection()">Sala de Juntas (Grande)
-    </label><br>
-    <label>
-        <input type="checkbox" name="tipo-espacio" value="metaverso" onchange="updateSelection()">Metaverso
-    </label>
+   <label>Tipo de Espacio:</label>
+<div class="checkbox-group">
+    <table>
+        <tr>
+            <td>
+                <label>
+                    <input type="checkbox" name="tipo-espacio" value="aula 3" onchange="updateSelection()">Aula 3
+                </label>
+            </td>
+            <td>
+                <label>
+                    <input type="checkbox" name="tipo-espacio" value="aula 4" onchange="updateSelection()">Aula 4
+                </label>
+            </td>
+            <td>
+                <label>
+                    <input type="checkbox" name="tipo-espacio" value="aula 5" onchange="updateSelection()">Aula 5
+                </label>
+            </td>
+            <td>
+                <label>
+                    <input type="checkbox" name="tipo-espacio" value="auditorio grande" onchange="updateSelection()">Auditorio (Grande)
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>
+                    <input type="checkbox" name="tipo-espacio" value="auditorio chico" onchange="updateSelection()">Auditorio (Chico)
+                </label>
+            </td>
+            <td>
+                <label>
+                    <input type="checkbox" name="tipo-espacio" value="area verde" onchange="updateSelection()">Área Verde
+                </label>
+            </td>
+            <td>
+                <label>
+                    <input type="checkbox" name="tipo-espacio" value="velaria" onchange="updateSelection()">Velaria
+                </label>
+            </td>
+            <td>
+                <label>
+                    <input type="checkbox" name="tipo-espacio" value="zona de convivencia" onchange="updateSelection()">Zona de Convivencia
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>
+                    <input type="checkbox" name="tipo-espacio" value="sala juntas chica" onchange="updateSelection()">Sala de Juntas (Chica)
+                </label>
+            </td>
+            <td>
+                <label>
+                    <input type="checkbox" name="tipo-espacio" value="sala juntas grande" onchange="updateSelection()">Sala de Juntas (Grande)
+                </label>
+            </td>
+            <td>
+                <label>
+                    <input type="checkbox" name="tipo-espacio" value="metaverso" onchange="updateSelection()">Metaverso
+                </label>
+            </td>
+        </tr>
+    </table>
+</div>
 
-    <div class="seleccionados" id="seleccionados"></div>
-    
-    <button onclick="resetSelection()">Restablecer Selecciones</button>
+<div class="seleccionados" id="seleccionados"></div>
 
-    <script>
-        function updateSelection() {
-            const checkboxes = document.querySelectorAll('input[name="tipo-espacio"]:checked');
-            const seleccionadosDiv = document.getElementById('seleccionados');
-            const seleccionados = Array.from(checkboxes).map(checkbox => checkbox.value);
-            
-            if (seleccionados.length > 0) {
-                seleccionadosDiv.textContent = 'Opciones seleccionadas: ' + seleccionados.join(', ');
-            } else {
-                seleccionadosDiv.textContent = 'No se ha seleccionado ninguna opción.';
-            }
+<button onclick="resetSelection()">Restablecer Selecciones</button>
+
+<script>
+    function updateSelection() {
+        const checkboxes = document.querySelectorAll('input[name="tipo-espacio"]:checked');
+        const seleccionadosDiv = document.getElementById('seleccionados');
+        const seleccionados = Array.from(checkboxes).map(checkbox => checkbox.value);
+        
+        if (seleccionados.length > 0) {
+            seleccionadosDiv.textContent = 'Opciones seleccionadas: ' + seleccionados.join(', ');
+        } else {
+            seleccionadosDiv.textContent = 'No se ha seleccionado ninguna opción.';
         }
+    }
 
-        function resetSelection() {
-            const checkboxes = document.querySelectorAll('input[name="tipo-espacio"]');
-            checkboxes.forEach(checkbox => checkbox.checked = false);
-            updateSelection(); // Actualiza el mensaje al restablecer
-        }
-    </script>
-</body>
-</html>
-
-                
+    function resetSelection() {
+        const checkboxes = document.querySelectorAll('input[name="tipo-espacio"]');
+        checkboxes.forEach(checkbox => checkbox.checked = false);
+        updateSelection(); // Actualiza el mensaje al restablecer
+    }
+</script>                
                 <style>
                     select[multiple] {
                         width: 100%;
