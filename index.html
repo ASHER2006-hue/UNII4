@@ -87,12 +87,67 @@
                 <div class="caption">Zona de Convivencia: Disfruta de un ambiente cómodo para la convivencia en este espacio equipado con cómodos puffs y sillones.</div>
             </div>
         </div>
-        <h2>Precios</h2>
-        <div class="pricing">
-            <p>$100 por persona. Eventos con más de 300 personas</p>
-            <p>$120 por persona. Eventos de 151 a 299 personas</p>
-            <p>$150 por persona. Eventos de 5 a 150 personas</p>
-        </div>
+       <section class="pricing-section">
+  <h2 class="pricing-title">Precios</h2>
+  <div class="pricing-container">
+    <div class="pricing-card">
+      <h3 class="pricing-card-title">Eventos con más de 300 personas</h3>
+      <p class="pricing-card-price">$100 por persona</p>
+    </div>
+    <div class="pricing-card">
+      <h3 class="pricing-card-title">Eventos de 151 a 299 personas</h3>
+      <p class="pricing-card-price">$120 por persona</p>
+    </div>
+    <div class="pricing-card">
+      <h3 class="pricing-card-title">Eventos de 5 a 150 personas</h3>
+      <p class="pricing-card-price">$150 por persona</p>
+    </div>
+  </div>
+</section>
+
+<style>
+.pricing-section {
+  padding: 40px 0;
+}
+
+.pricing-title {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #213555;
+}
+
+.pricing-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.pricing-card {
+  background-color: #F5EFE7;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  flex-basis: 300px;
+  border-top: 10px solid #3E5879;
+}
+
+.pricing-card-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #213555;
+}
+
+.pricing-card-price {
+  font-size: 24px;
+  font-weight: bold;
+  color: #3E5879;
+}
+</style>
         <h2>¿Por qué Elegir Nuestros Espacios?</h2>
         <ul>
             <li>Ambientes cómodos y bien equipados.</li>
