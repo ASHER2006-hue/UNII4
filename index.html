@@ -109,20 +109,84 @@
                 <label for="number">Número de teléfono:</label>
                 <input type="text" id="number" name="number" required>
                 
-                <label for="tipo-espacio">Tipo de Espacio:</label>
-                <select id="tipo-espacio" name="tipo-espacio" multiple required>
-                    <option value="aula">Aula 3</option>
-                    <option value="aula">Aula 4</option>
-                    <option value="aula">Aula 5</option>
-                    <option value="auditorio">Auditorio (Grande)</option>
-                    <option value="auditorio">Auditorio (Chico)</option>
-                    <option value="area-verde">Área Verde</option>
-                    <option value="velaria">Velaria</option>
-                    <option value="zona de convivencia">Zona de Convivencia</option>
-                    <option value="sala-juntas-chica">Sala de Juntas (Grande)</option>
-                    <option value="sala-juntas-grande">Sala de Juntas (Chica)</option>
-                    <option value="metaverso">Metaverso</option>
-                </select>
+             <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selector Dinámico con Checkboxes</title>
+    <style>
+        .seleccionados {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        button {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <label>Tipo de Espacio:</label><br>
+    <label>
+        <input type="checkbox" name="tipo-espacio" value="aula 3" onchange="updateSelection()">Aula 3
+    </label><br>
+    <label>
+        <input type="checkbox" name="tipo-espacio" value="aula 4" onchange="updateSelection()">Aula 4
+    </label><br>
+    <label>
+        <input type="checkbox" name="tipo-espacio" value="aula 5" onchange="updateSelection()">Aula 5
+    </label><br>
+    <label>
+        <input type="checkbox" name="tipo-espacio" value="auditorio grande" onchange="updateSelection()">Auditorio (Grande)
+    </label><br>
+    <label>
+        <input type="checkbox" name="tipo-espacio" value="auditorio chico" onchange="updateSelection()">Auditorio (Chico)
+    </label><br>
+    <label>
+        <input type="checkbox" name="tipo-espacio" value="area verde" onchange="updateSelection()">Área Verde
+    </label><br>
+    <label>
+        <input type="checkbox" name="tipo-espacio" value="velaria" onchange="updateSelection()">Velaria
+    </label><br>
+    <label>
+        <input type="checkbox" name="tipo-espacio" value="zona de convivencia" onchange="updateSelection()">Zona de Convivencia
+    </label><br>
+    <label>
+        <input type="checkbox" name="tipo-espacio" value="sala juntas chica" onchange="updateSelection()">Sala de Juntas (Chica)
+    </label><br>
+    <label>
+        <input type="checkbox" name="tipo-espacio" value="sala juntas grande" onchange="updateSelection()">Sala de Juntas (Grande)
+    </label><br>
+    <label>
+        <input type="checkbox" name="tipo-espacio" value="metaverso" onchange="updateSelection()">Metaverso
+    </label>
+
+    <div class="seleccionados" id="seleccionados"></div>
+    
+    <button onclick="resetSelection()">Restablecer Selecciones</button>
+
+    <script>
+        function updateSelection() {
+            const checkboxes = document.querySelectorAll('input[name="tipo-espacio"]:checked');
+            const seleccionadosDiv = document.getElementById('seleccionados');
+            const seleccionados = Array.from(checkboxes).map(checkbox => checkbox.value);
+            
+            if (seleccionados.length > 0) {
+                seleccionadosDiv.textContent = 'Opciones seleccionadas: ' + seleccionados.join(', ');
+            } else {
+                seleccionadosDiv.textContent = 'No se ha seleccionado ninguna opción.';
+            }
+        }
+
+        function resetSelection() {
+            const checkboxes = document.querySelectorAll('input[name="tipo-espacio"]');
+            checkboxes.forEach(checkbox => checkbox.checked = false);
+            updateSelection(); // Actualiza el mensaje al restablecer
+        }
+    </script>
+</body>
+</html>
+
                 
                 <style>
                     select[multiple] {
