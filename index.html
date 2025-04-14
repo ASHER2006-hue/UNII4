@@ -260,7 +260,7 @@
         const seleccionados = Array.from(checkboxes).map(checkbox => checkbox.value);
         
         if (seleccionados.length > 0) {
-            seleccionadosDiv.textContent = 'Opciones seleccionadas: ' + seleccionados.join(', ');
+            seleccionadosDiv.textContent = 'Espacios seleccionados: ' + seleccionados.join(', ');
         } else {
             seleccionadosDiv.textContent = 'No se ha seleccionado ninguna opción.';
         }
@@ -269,7 +269,7 @@
     function resetSelection() {
         const checkboxes = document.querySelectorAll('input[name="tipo-espacio"]');
         checkboxes.forEach(checkbox => checkbox.checked = false);
-        updateSelection(); // Actualiza el mensaje al restablecer
+        updateSelection(); 
     }
 </script>                
                 <style>
